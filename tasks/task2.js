@@ -21,7 +21,10 @@ function getTopScoringStudents(students) {
 // Приймає масив студентів та повертає середній вік студентів
 function getAverageAge(students) {
   // Ваш код тут
-  const totalAge = students.reduce((sum, student) => sum + student.age, 0);
+  let totalAge = 0;
+  students.forEach(student => {
+    totalAge += student.age;
+  });
   return totalAge / students.length;
 }
 
